@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/karma/bin/karma start --single-run",
+    "start": "node ./bin/server.js",
+    "build": "npm run test && npm run start",
+    "preversion": "git checkout master",
+    "postversion": "git push origin master && git push origin master --tags",
+    "postinstall": "node ./node_modules/phantomjs-prebuilt/install.js"
   },
   "author": "Chandresh Rajkumar Manonmani <chandresh.rm@gmail.com> (http://chandreshrm.name)",
   "license": "UNLICENSED",
