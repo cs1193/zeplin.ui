@@ -4,12 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/karma/bin/karma start --single-run",
-    "start": "node ./bin/server.js",
-    "build": "npm run test && npm run start",
-    "preversion": "git checkout master",
-    "postversion": "git push origin master && git push origin master --tags",
-    "postinstall": "node ./node_modules/phantomjs-prebuilt/install.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chandresh Rajkumar Manonmani <chandresh.rm@gmail.com> (http://chandreshrm.name)",
   "license": "UNLICENSED",
@@ -91,15 +86,10 @@
     "example": "example",
     "test": "test"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cs1193/zeplin.ui.sub-task.git"
   },
-  "author": "Chandresh Rajkumar Manonmani <chandresh.rm@gmail.com> (http://chandreshrm.name)",
-  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/cs1193/zeplin.ui.sub-task/issues"
   },
