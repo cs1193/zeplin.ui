@@ -1,0 +1,19 @@
+.app-header {
+  @include linear-gradient(#2ea1f8, #1990ea, 1.0);
+  padding: 10px 0;
+
+  .logo {
+    background: #1166a5;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #ffffff;
+    margin: 0 auto;
+    padding: 5px;
+
+    .signage {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

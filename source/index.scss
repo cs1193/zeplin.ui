@@ -4,3 +4,19 @@
 @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'node_modules/animate.css/animate';
 @import 'node_modules/font-awesome/css/font-awesome';
+
+@import './utilities/utilities';
+@import './common/common';
+@import './board/board';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F0F3F6;
+  font-family: 'Montserrat', sans-serif;
+}

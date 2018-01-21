@@ -12,8 +12,8 @@ const configuration = {
   watch: false,
   context: __dirname,
   entry: {
-    scripts: ["webpack-hot-middleware/client", "angular", "./example/example.js"],
-    styles: ["./example/example.scss"]
+    scripts: ["webpack-hot-middleware/client", "angular", "./source/index.js"],
+    styles: ["./source/index.scss"]
   },
   devtool: "eval",
   resolve: {
@@ -105,7 +105,7 @@ const configuration = {
       minChunks: Infinity
     }),
     new HtmlWebpackPlugin({
-      template: "./example/example.ejs",
+      template: "./source/index.ejs",
       inject: false,
       minify: {
         collapseWhitespace: true,

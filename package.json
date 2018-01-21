@@ -84,9 +84,6 @@
     "lodash": "4.17.4",
     "ngstorage": "0.3.11"
   },
-  "bin": {
-    "zeplin.ui.sub-task": "server.js"
-  },
   "directories": {
     "example": "example",
     "test": "test"
