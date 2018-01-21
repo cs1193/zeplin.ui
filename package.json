@@ -1,5 +1,5 @@
 {
-  "name": "angular.ui.seed",
+  "name": "zeplin.ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -84,19 +84,16 @@
     "lodash": "4.17.4",
     "ngstorage": "0.3.11"
   },
-  "bin": {
-    "zeplin.ui.sub-task": "server.js"
-  },
   "directories": {
     "example": "example",
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cs1193/zeplin.ui.sub-task.git"
+    "url": "git+https://github.com/cs1193/zeplin.ui.git"
   },
   "bugs": {
-    "url": "https://github.com/cs1193/zeplin.ui.sub-task/issues"
+    "url": "https://github.com/cs1193/zeplin.ui/issues"
   },
-  "homepage": "https://github.com/cs1193/zeplin.ui.sub-task#readme"
+  "homepage": "https://github.com/cs1193/zeplin.uik#readme"
 }
