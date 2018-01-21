@@ -1,0 +1,36 @@
+.column {
+  margin: 10px 0;
+
+  .column-header {
+    padding: 10px 0;
+    font-weight: 600;
+  }
+
+  .column-cards {
+    background: #F7F9FB;
+    border-top: 3px solid #717172;
+    height: 300px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    padding: 10px;
+  }
+
+  .column-add-card {
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+
+    .add-card-button {
+      @include linear-gradient(#1991EB, #2DA1F8, 1.0);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #FFFFFF;
+
+      &:focus,
+      &:hover {
+        outline: 0;
+      }
+    }
+  }
+}
