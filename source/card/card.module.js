@@ -1,3 +1,5 @@
+/* @flow */
+
 import angular from 'angular';
 import angularUIBootstrap from 'angular-ui-bootstrap';
 
@@ -16,9 +18,12 @@ import NewCardComponentController from './new-card/new-card.component.controller
 
 import CardService from './card.service';
 
+declare var CARD_ENDPOINT: string;
+
 export default angular.module('zeplin.ui.card', [
   angularUIBootstrap,
 ])
+  .constant('CARD_ENDPOINT', CARD_ENDPOINT)
   .component(CardListComponent.NAME, CardListComponent)
   .component(CardItemComponent.NAME, CardItemComponent)
   .component(CardTextComponent.NAME, CardTextComponent)

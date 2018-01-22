@@ -5,10 +5,10 @@ export default class CardEditorComponentController {
   static NAME: string = 'CardEditorComponentController';
 
   /* @ngInject */
-  constructor($log, $scope, BoardService) {
+  constructor($log, $scope, CardService) {
     this.$log = $log;
     this.$scope = $scope;
-    this.BoardService = BoardService;
+    this.CardService = CardService;
   }
 
   $onInit() {
