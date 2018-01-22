@@ -5,6 +5,7 @@ export default {
   NAME: 'newCard',
   bindings: {
     rounded: '<',
+    columnId: '<?',
   },
   template: NewCardComponentTemplate,
   controller: NewCardComponentController.NAME,

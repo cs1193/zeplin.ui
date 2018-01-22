@@ -5,7 +5,7 @@
     </h3>
   </div>
   <div class="modal-body">
-    <form class="form" name="newCardForm" accept-charset="utf-8" novalidate autocomplete="off">
+    <form class="form new-card-form" name="newCardForm" accept-charset="utf-8" novalidate autocomplete="off">
       <div class="form-group">
         <label for="name">Title</label>
         <input type="text" id="name" name="name" class="form-control" placeholder="Title" ng-model="vm.newCardForm.name" required min="3" max="140" />
@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea id="description" name="description" class="form-control" placeholder="Description" ng-model="vm.newCardForm.description" required></textarea>
+        <textarea id="description" name="description" class="form-control textarea" placeholder="Description" ng-model="vm.newCardForm.description" required></textarea>
         <div class="help-block" ng-messages="newCardForm.description.$error" ng-show="newCardForm.description.$touched">
           <span ng-message="required">Description is required.</span>
         </div>
@@ -24,8 +24,12 @@
         <label for="description">Image</label>
       </div>
       <div class="form-group">
+        <label for="color">Color</label>
+        <input type="file" class="form-control" />
+      </div>
+      <div class="form-group">
         <label for="description">Sub Tasks</label>
-        <sub-task></sub-task>
+        <task task-id="123"></task>
       </div>
       <div class="form-group">
         <label for="description">Comments</label>

@@ -16,4 +16,13 @@ export default class ColumnListComponentController {
   addColumn(column) {
     this.columns.push(column);
   }
+
+
+  onDragComplete(data, event) {
+    this.$log.log('Drag Success', data);
+  }
+
+  onDropComplete(data, event) {
+    this.$log.log('Drop Success', data);
+  }
 }

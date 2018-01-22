@@ -25,3 +25,15 @@
 
   }
 }
+
+.new-card-form {
+  .form-control {
+    box-shadow: none;
+    border-radius: 0px;
+  }
+
+  .textarea {
+    resize: none;
+    height: 150px;
+  }
+}

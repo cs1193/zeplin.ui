@@ -11,7 +11,7 @@
     "postversion": "git push origin master && git push origin master --tags",
     "postinstall": "node ./node_modules/phantomjs-prebuilt/install.js"
   },
-  "author": "Chandresh Rajkumar Manonmani <chandresh.rm@gmail.com> (http://chandreshrm.name)",
+  "author": "Chandresh Rajkumar Manonmani <chandresh.rm@gmail.com> <cs1193@gmail.com> (http://chandreshrm.name)",
   "license": "UNLICENSED",
   "devDependencies": {
     "angular-mocks": "1.6.8",
@@ -70,7 +70,6 @@
   "dependencies": {
     "angular": "1.6.8",
     "angular-animate": "1.6.8",
-    "angular-bootstrap-colorpicker": "3.0.32",
     "angular-messages": "1.6.8",
     "angular-native-dragdrop": "1.2.2",
     "angular-resource": "1.6.8",
@@ -78,11 +77,13 @@
     "angular-sanitize": "1.6.8",
     "angular-ui-bootstrap": "2.5.6",
     "angular-ui-router": "1.0.3",
+    "angularjs-color-picker": "3.4.8",
     "animate.css": "3.5.2",
     "babel-preset-stage-0": "6.24.1",
     "bootstrap-sass": "3.3.7",
     "font-awesome": "4.7.0",
     "lodash": "4.17.4",
+    "ngdraggable": "0.1.10",
     "ngstorage": "0.3.11"
   },
   "directories": {
