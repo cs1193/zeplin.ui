@@ -1,0 +1,6 @@
+.task-indicator {
+  &::before {
+    content: '\f046';
+    font-family: 'FontAwesome';
+  }
+}

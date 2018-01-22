@@ -3,7 +3,7 @@ import CardComponentTemplate from './card.component.html';
 export default {
   NAME: 'card',
   bindings: {
-    title: '<',
+    text: '<',
     image: '<',
     comments: '<',
     subtasks: '<',
