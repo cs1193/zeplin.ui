@@ -1,0 +1,24 @@
+@import './column-header/column-header';
+
+.column {
+  margin: 10px 0;
+
+  .column-add-card {
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+
+    .add-card-button {
+      @include linear-gradient(#1991EB, #2DA1F8, 1.0);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #FFFFFF;
+
+      &:focus,
+      &:hover {
+        outline: 0;
+      }
+    }
+  }
+}
