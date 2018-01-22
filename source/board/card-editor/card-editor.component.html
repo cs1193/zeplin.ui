@@ -1,0 +1,48 @@
+<div class="card-editor">
+  <div class="modal-header">
+    <h3 class="modal-title">
+      New Card
+    </h3>
+  </div>
+  <div class="modal-body">
+    <form class="form" name="newCardForm" accept-charset="utf-8" novalidate autocomplete="off">
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Title" ng-model="vm.newCardForm.name" required min="3" max="140" />
+        <div class="help-block" ng-messages="newCardForm.name.$error" ng-show="newCardForm.name.$touched">
+          <span ng-message="required">Title is required.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" class="form-control" placeholder="Description" ng-model="vm.newCardForm.description" required></textarea>
+        <div class="help-block" ng-messages="newCardForm.description.$error" ng-show="newCardForm.description.$touched">
+          <span ng-message="required">Description is required.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Image</label>
+      </div>
+      <div class="form-group">
+        <label for="description">Sub Tasks</label>
+        <sub-task></sub-task>
+      </div>
+      <div class="form-group">
+        <label for="description">Comments</label>
+        <comment-box></comment-box>
+      </div>
+      <div class="form-group">
+        <label for="description">Remainder</label>
+        <remainder></remainder>
+      </div>
+      <div class="form-group">
+        <label for="description">Remainder</label>
+        <shared-profile></shared-profile>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+  </div>
+</div>

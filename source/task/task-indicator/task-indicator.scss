@@ -1,0 +1,10 @@
+.task-indicator {
+  margin: 2.5px 0;
+  padding: 2.5px;
+  text-align: center;
+
+  &::before {
+    content: '\f046';
+    font-family: 'FontAwesome';
+  }
+}

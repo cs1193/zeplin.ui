@@ -7,6 +7,9 @@ import angularUIBootstrap from 'angular-ui-bootstrap';
 import BoardModule from './board/board.module';
 import CommonModule from './common/common.module';
 import UtilitiesModule from './utilities/utilities.module';
+import TaskModule from './task/task.module';
+import RemainderModule from './remainder/remainder.module';
+import CommentModule from './comment/comment.module';
 
 import IndexConfig from './index.config';
 
@@ -16,6 +19,9 @@ export default angular.module('zeplin.ui', [
   CommonModule,
   UtilitiesModule,
   BoardModule,
+  TaskModule,
+  RemainderModule,
+  CommentModule,
 ])
   .config(IndexConfig)
   .name;

@@ -1,0 +1,10 @@
+.comment-indicator {
+  margin: 2.5px 0;
+  padding: 2.5px;
+  text-align: center;
+
+  &::before {
+    content: '\f086';
+    font-family: 'FontAwesome';
+  }
+}

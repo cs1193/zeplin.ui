@@ -24,6 +24,12 @@ import CardTextComponent from './card/card-text/card-text.component';
 import CardImageComponent from './card/card-image/card-image.component';
 import CardFooterComponent from './card/card-footer/card-footer.component';
 
+import CardEditorComponent from './card-editor/card-editor.component';
+import CardEditorComponentController from './card-editor/card-editor.component.controller';
+
+import NewCardComponent from './new-card/new-card.component';
+import NewCardComponentController from './new-card/new-card.component.controller';
+
 import BoardService from './board.service';
 
 import BoardConfig from './board.config';
@@ -50,6 +56,10 @@ export default angular.module('zeplin.ui.board', [
   .component(CardTextComponent.NAME, CardTextComponent)
   .component(CardImageComponent.NAME, CardImageComponent)
   .component(CardFooterComponent.NAME, CardFooterComponent)
+  .component(CardEditorComponent.NAME, CardEditorComponent)
+  .controller(CardEditorComponentController.NAME, CardEditorComponentController)
+  .component(NewCardComponent.NAME, NewCardComponent)
+  .controller(NewCardComponentController.NAME, NewCardComponentController)
   .service(BoardService.NAME, BoardService)
   .config(BoardConfig)
   .name;
