@@ -1,5 +1,6 @@
 /* @flow */
 import CardEditorComponent from '../card-editor/card-editor.component';
+import CardEditorComponentController from '../card-editor/card-editor.component.controller';
 
 export default class NewCardComponentController {
   static NAME: string = 'NewCardComponentController';
@@ -12,9 +13,18 @@ export default class NewCardComponentController {
   }
 
   open() {
+    const $ctrl = this;
     const modalInstance = this.$uibModal.open({
       component: CardEditorComponent.NAME,
       size: 'lg',
+      backdrop: 'static',
+      controller: CardEditorComponentController.NAME,
+      controllerAs: '$ctrl',
+      resolve: {
+        columnId() {
+          return $ctrl.columnId;
+        },
+      },
     });
 
     modalInstance.result.then((instance) => {

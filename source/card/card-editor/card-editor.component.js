@@ -4,7 +4,8 @@ import CardEditorComponentController from './card-editor.component.controller';
 export default {
   NAME: 'cardEditor',
   bindings: {
-    columnId: '<?',
+    modalInstance: '<',
+    resolve: '<',
   },
   template: CardEditorComponentTemplate,
   controller: CardEditorComponentController.NAME,

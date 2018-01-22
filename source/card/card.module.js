@@ -14,6 +14,8 @@ import CardEditorComponentController from './card-editor/card-editor.component.c
 import NewCardComponent from './new-card/new-card.component';
 import NewCardComponentController from './new-card/new-card.component.controller';
 
+import CardService from './card.service';
+
 export default angular.module('zeplin.ui.card', [
   angularUIBootstrap,
 ])
@@ -26,4 +28,5 @@ export default angular.module('zeplin.ui.card', [
   .controller(CardEditorComponentController.NAME, CardEditorComponentController)
   .component(NewCardComponent.NAME, NewCardComponent)
   .controller(NewCardComponentController.NAME, NewCardComponentController)
+  .service(CardService.NAME, CardService)
   .name;

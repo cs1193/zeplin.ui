@@ -1,20 +1,20 @@
 /* @flow */
 
-export default class BoardService {
-  static NAME: string = 'BoardService';
+export default class CardService {
+  static NAME: string = 'CardService';
 
   /* @ngInject */
-  constructor($log, $q, $http, BOARD_ENDPOINT) {
+  constructor($log, $q, $http, CARD_ENDPOINT) {
     this.$log = $log;
     this.$q = $q;
     this.$http = $http;
-    this.BOARD_ENDPOINT = BOARD_ENDPOINT;
+    this.CARD_ENDPOINT = CARD_ENDPOINT;
   }
 
-  getBoardById(id) {
+  getCardById(id) {
     const deferred = this.$q.defer();
 
-    this.$http.get(`${this.BOARD_ENDPOINT}/${id}`).then((response) => {
+    this.$http.get(`${this.CARD_ENDPOINT}/${id}`).then((response) => {
       if (response && response.data && (response.status === 200 || response.status === 201)) {
         deferred.resolve(response.data);
       }

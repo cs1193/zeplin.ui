@@ -1,21 +1,24 @@
 /* @flow */
-import BoardService from '../../board/board.service';
+import CardService from '../card.service';
 
 export default class CardEditorComponentController {
   static NAME: string = 'CardEditorComponentController';
 
   /* @ngInject */
-  constructor($log, $scope, $stateParams, BoardService) {
+  constructor($log, $scope, BoardService) {
     this.$log = $log;
     this.$scope = $scope;
-    this.$stateParams = $stateParams;
     this.BoardService = BoardService;
   }
 
   $onInit() {
-    if (this.columnId) {
+    if (this.resolve.columnId) {
       this.$log.log('Defined');
     }
     this.$log.log('Undefined');
+  }
+
+  cancel() {
+    this.modalInstance.dismiss('cancel');
   }
 }
