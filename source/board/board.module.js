@@ -4,6 +4,8 @@ import angular from 'angular';
 import angularUIRouter from 'angular-ui-router';
 import angularUIBootstrap from 'angular-ui-bootstrap';
 
+import CardModule from '../card/card.module';
+
 import BoardComponent from './board.component';
 import BoardComponentController from './board.component.controller';
 
@@ -17,19 +19,6 @@ import ColumnComponentController from './column/column.component.controller';
 
 import ColumnHeaderComponent from './column/column-header/column-header.component';
 
-import CardListComponent from './card-list/card-list.component';
-
-import CardComponent from './card/card.component';
-import CardTextComponent from './card/card-text/card-text.component';
-import CardImageComponent from './card/card-image/card-image.component';
-import CardFooterComponent from './card/card-footer/card-footer.component';
-
-import CardEditorComponent from './card-editor/card-editor.component';
-import CardEditorComponentController from './card-editor/card-editor.component.controller';
-
-import NewCardComponent from './new-card/new-card.component';
-import NewCardComponentController from './new-card/new-card.component.controller';
-
 import BoardService from './board.service';
 
 import BoardConfig from './board.config';
@@ -40,6 +29,7 @@ declare var CARD_ENDPOINT: string;
 export default angular.module('zeplin.ui.board', [
   angularUIRouter,
   angularUIBootstrap,
+  CardModule,
 ])
   .constant('BOARD_ENDPOINT', BOARD_ENDPOINT)
   .constant('CARD_ENDPOINT', CARD_ENDPOINT)
@@ -51,15 +41,6 @@ export default angular.module('zeplin.ui.board', [
   .component(ColumnComponent.NAME, ColumnComponent)
   .component(ColumnHeaderComponent.NAME, ColumnHeaderComponent)
   .controller(ColumnComponentController.NAME, ColumnComponentController)
-  .component(CardListComponent.NAME, CardListComponent)
-  .component(CardComponent.NAME, CardComponent)
-  .component(CardTextComponent.NAME, CardTextComponent)
-  .component(CardImageComponent.NAME, CardImageComponent)
-  .component(CardFooterComponent.NAME, CardFooterComponent)
-  .component(CardEditorComponent.NAME, CardEditorComponent)
-  .controller(CardEditorComponentController.NAME, CardEditorComponentController)
-  .component(NewCardComponent.NAME, NewCardComponent)
-  .controller(NewCardComponentController.NAME, NewCardComponentController)
   .service(BoardService.NAME, BoardService)
   .config(BoardConfig)
   .name;
