@@ -1,3 +1,24 @@
 <div class="board-editor">
+  <div class="modal-header">
+    <h3 class="modal-title">
+      Create Board
+    </h3>
+  </div>
+  <div class="modal-body">
+    <form class="form new-board-form" name="newBoardForm" accept-charset="utf-8" novalidate autocomplete="off">
+      <div class="form-group">
+        <label for="boardName">Board Name</label>
+        <input type="text" id="boardName" name="boardName" class="form-control" placeholder="Name of the Board" ng-model="vm.newBoardForm.name" required />
+        <div class="help-block" ng-messages="newCardForm.name.$error" ng-show="newCardForm.name.$touched">
+          <span ng-message="required">Board Name is required.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
 
+  </div>
 </div>

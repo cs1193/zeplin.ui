@@ -1,0 +1,17 @@
+<div class="navigation-item">
+  <div ng-if="$ctrl.dropdown">
+    <span uib-dropdown on-toggle="toggled(open)">
+      <a href id="dropdown" uib-dropdown-toggle>
+        {{$ctrl.title}} <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </a>
+      <div class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown">
+        <ng-transclude></ng-transclude>
+      </div>
+    </span>
+  </div>
+  <div ng-if="!$ctrl.dropdown">
+    <a ng-href="$ctrl.url">
+      {{$ctrl.title}}
+    </a>
+  </div>
+</div>

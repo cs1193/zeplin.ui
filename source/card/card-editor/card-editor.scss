@@ -22,18 +22,14 @@
   }
 
   .modal-body {
+    .form-control {
+      box-shadow: none;
+      border-radius: 0px;
+    }
 
-  }
-}
-
-.new-card-form {
-  .form-control {
-    box-shadow: none;
-    border-radius: 0px;
-  }
-
-  .textarea {
-    resize: none;
-    height: 150px;
+    .textarea {
+      resize: none;
+      height: 150px;
+    }
   }
 }

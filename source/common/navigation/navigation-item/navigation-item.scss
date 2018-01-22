@@ -1,0 +1,19 @@
+navigation-item {
+  display: inline-block;
+  padding: 15px;
+
+  a {
+    color: #FFFFFF;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    i {
+      color: #86caff;
+    }
+  }
+}

@@ -17,6 +17,7 @@
   "rules": {
     "import/no-named-as-default": 0,
     "no-shadow": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "no-param-reassign": "off",
   }
 }

@@ -1,3 +1,15 @@
 <div class="board-list">
 
+  <ul class="list-unstyled">
+    <li role="menuitem" ng-if="!$ctrl.noBoards" ng-repeat="board in $ctrl.boards track by $index">
+      <a ng-href="/board/{{board.id}}">{{board.title}}</a>
+    </li>
+    <div ng-if="$ctrl.noBoards">
+      No Boards Available
+    </div>
+    <li class="divider"></li>
+    <li role="menuitem">
+      <new-board></new-board>
+    </li>
+  </ul>
 </div>

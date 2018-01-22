@@ -15,6 +15,7 @@ import BoardHeaderComponent from './board-header/board-header.component';
 
 import BoardEditorComponent from './board-editor/board-editor.component';
 import BoardEditorComponentController from './board-editor/board-editor.component.controller';
+import BoardNameCheckDirective from './board-editor/board-name-check.directive';
 
 import BoardListComponent from './board-list/board-list.component';
 import BoardListComponentController from './board-list/board-list.component.controller';
@@ -41,6 +42,7 @@ import BoardService from './board.service';
 import BoardConfig from './board.config';
 
 declare var BOARD_ENDPOINT: string;
+declare var GET_BOARDS_ENDPOINT: string;
 
 export default angular.module('zeplin.ui.board', [
   angularUIRouter,
@@ -49,6 +51,7 @@ export default angular.module('zeplin.ui.board', [
   CardModule,
 ])
   .constant('BOARD_ENDPOINT', BOARD_ENDPOINT)
+  .constant('GET_BOARDS_ENDPOINT', GET_BOARDS_ENDPOINT)
   .component(BoardComponent.NAME, BoardComponent)
   .controller(BoardComponentController.NAME, BoardComponentController)
   .component(BoardHeaderComponent.NAME, BoardHeaderComponent)
@@ -63,6 +66,7 @@ export default angular.module('zeplin.ui.board', [
   .controller(BoardListComponentController.NAME, BoardListComponentController)
   .component(BoardEditorComponent.NAME, BoardEditorComponent)
   .controller(BoardEditorComponentController.NAME, BoardEditorComponentController)
+  .directive(BoardNameCheckDirective.NAME, BoardNameCheckDirective)
   .component(NewColumnComponent.NAME, NewColumnComponent)
   .controller(NewColumnComponentController.NAME, NewColumnComponentController)
   .component(ColumnEditorComponent.NAME, ColumnEditorComponent)
