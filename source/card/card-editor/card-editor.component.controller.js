@@ -1,5 +1,5 @@
 /* @flow */
-import BoardService from '../board.service';
+import BoardService from '../../board/board.service';
 
 export default class CardEditorComponentController {
   static NAME: string = 'CardEditorComponentController';
@@ -14,8 +14,8 @@ export default class CardEditorComponentController {
 
   $onInit() {
     if (this.columnId) {
-      console.log('Defined');
+      this.$log.log('Defined');
     }
-    console.log('Undefined');
+    this.$log.log('Undefined');
   }
 }
