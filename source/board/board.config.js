@@ -7,7 +7,7 @@ export default function BoardConfig($stateProvider) {
   const boardState: object = {
     state: 'board',
     stateDefinition: {
-      url: 'board/:boardId',
+      url: '/board/:boardId',
       component: BoardComponent.NAME,
     },
   };
