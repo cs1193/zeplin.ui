@@ -1,5 +1,13 @@
 <div class="layout">
-  <app-header>Hello</app-header>
+  <app-header>
+    <navigation>
+      <navigation-item title="'Boards'" dropdown="true">
+        <board-list></board-list>
+      </navigation-item>
+      <navigation-item title="'Activity'"></navigation-item>
+      <navigation-item title="'Teams'"></navigation-item>
+    </navigation>
+  </app-header>
   <app-main>
     <ui-view></ui-view>
   </app-main>
