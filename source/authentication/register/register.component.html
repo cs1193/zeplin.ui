@@ -1,0 +1,43 @@
+<div class="register">
+  <div class="container-fluid">
+    <div class="centered-form registered-form">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title">
+            Register
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form" name="registerForm" accept-charset="utf-8" novalidate autocomplete="off">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" ng-model="vm.registerForm.name" required min="3" />
+              <div class="help-block" ng-messages="registerForm.name.$error" ng-show="registerForm.name.$touched">
+                <span ng-message="required">Name is required.</span>
+                <span ng-message="min">Name should be minimum 3 characters.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="email" class="form-control" placeholder="Email" ng-model="vm.registerForm.email" required min="3" email-address />
+              <div class="help-block" ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched">
+                <span ng-message="required">Email is required.</span>
+                <span ng-message="min">Email should be minimum 3 characters.</span>
+                <span ng-message="invalidEmail">The email is invalid</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" placeholder="Password" ng-model="vm.register.password" required />
+              <div class="help-block" ng-messages="registerForm.password.$error" ng-show="registerForm.password.$touched">
+                <span ng-message="required">Password is required.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-default btn-block btn-sm" ng-click="vm.register()" ng-disabled="registerForm.$invalid">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

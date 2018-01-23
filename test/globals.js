@@ -1,3 +1,5 @@
+var LOGIN_ENDPOINT = 'http://login-endpoint';
+var REGISTER_ENDPOINT = 'http://register-endpoint';
 var CARD_ENDPOINT = 'http://card-endpoint';
 var TASK_ENDPOINT = 'http://task-endpoint';
 var GET_BOARDS_ENDPOINT = 'http://get-boards-endpoint';
