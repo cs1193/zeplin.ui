@@ -31,5 +31,16 @@
       resize: none;
       height: 150px;
     }
+
+    .form-button {
+      @include linear-gradient(#1991EB, #2DA1F8, 1.0);
+      color: #FFFFFF;
+      border: solid 1px #1585d8;
+
+      &.cancel {
+        @include linear-gradient(#CB356B, #BD3F32, 1.0);
+      }
+    }
   }
+
 }

@@ -6,23 +6,25 @@ export default class BoardNameCheckDirective {
   static NAME: string = 'boardNameCheck';
 
   /* @ngInject */
-  constructor($log, BoardService) {
-    this.$log = $log;
-    this.BoardService = BoardService;
-  }
-
-  static factory() {
+  static factory($q, BoardService) {
     return {
       restrict: 'A',
       require: 'ngModel',
       link(scope, element, attributes, controller) {
         controller.$asyncValidators.checkBoardNameExists = (modelValue, viewValue) => {
-          this.BoardService.getBoardByName(modelValue)
+          const deferred = $q.defer();
+          BoardService.getBoardByName(modelValue)
             .then((data) => {
-              this.$log.log(data);
+              controller.$setValidity('boardNameExists', true);
+              if (data && data.boardName === modelValue) {
+                controller.$setValidity('boardNameExists', false);
+              }
+              deferred.resolve(true);
             }, (error) => {
-              this.$log.log(error);
+              controller.$setValidity('boardNameExists', false);
+              deferred.reject();
             });
+          return deferred.promise;
         };
       },
     };

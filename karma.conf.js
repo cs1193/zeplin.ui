@@ -38,7 +38,8 @@ function configuration (config, webpack) {
               presets: [
                 'env',
                 'es2017',
-                'flow'
+                'flow',
+                'stage-0'
               ],
               plugins: [
                 'transform-decorators-legacy',

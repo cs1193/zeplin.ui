@@ -6,10 +6,11 @@ export default class NewCardComponentController {
   static NAME: string = 'NewCardComponentController';
 
   /* @ngInject */
-  constructor($log, $scope, $uibModal) {
+  constructor($log, $scope, $uibModal, ngToast) {
     this.$log = $log;
     this.$scope = $scope;
     this.$uibModal = $uibModal;
+    this.ngToast = ngToast;
   }
 
   open() {
