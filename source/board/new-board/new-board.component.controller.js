@@ -6,10 +6,11 @@ export default class NewBoardComponentController {
   static NAME: string = 'NewBoardComponentController';
 
   /* @ngInject */
-  constructor($log, $scope, $uibModal) {
+  constructor($log, $scope, $uibModal, ngToast) {
     this.$log = $log;
     this.$scope = $scope;
     this.$uibModal = $uibModal;
+    this.ngToast = ngToast;
   }
 
   open() {
@@ -24,7 +25,7 @@ export default class NewBoardComponentController {
     });
 
     modalInstance.result.then((instance) => {
-      this.$log.log('Modal Opened');
+      this.ngToast.create(instance.message);
     }, (error) => {
       this.$log.log('Modal Closed');
     });

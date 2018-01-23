@@ -46,6 +46,8 @@
     "karma": "2.0.0",
     "karma-babel-preprocessor": "7.0.0",
     "karma-chrome-launcher": "2.2.0",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.1",
     "karma-junit-reporter": "1.2.0",
     "karma-mocha-reporter": "2.2.5",
     "karma-phantomjs-launcher": "1.0.4",
@@ -83,6 +85,7 @@
     "bootstrap-sass": "3.3.7",
     "font-awesome": "4.7.0",
     "lodash": "4.17.4",
+    "ng-toast": "2.0.0",
     "ngdraggable": "0.1.10",
     "ngstorage": "0.3.11"
   },

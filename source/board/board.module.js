@@ -3,6 +3,8 @@
 import angular from 'angular';
 import angularUIRouter from 'angular-ui-router';
 import angularUIBootstrap from 'angular-ui-bootstrap';
+import ngSanitize from 'angular-sanitize';
+import ngToast from 'ng-toast';
 
 import ngDraggable from 'ngdraggable';
 
@@ -41,17 +43,23 @@ import BoardService from './board.service';
 
 import BoardConfig from './board.config';
 
-declare var BOARD_ENDPOINT: string;
+declare var GET_BOARD_BY_ID_ENDPOINT: string;
+declare var GET_BOARD_BY_NAME_ENDPOINT: string;
 declare var GET_BOARDS_ENDPOINT: string;
+declare var CREATE_BOARD_ENDPOINT: string;
 
 export default angular.module('zeplin.ui.board', [
   angularUIRouter,
   angularUIBootstrap,
+  ngSanitize,
   'ngDraggable',
+  'ngToast',
   CardModule,
 ])
-  .constant('BOARD_ENDPOINT', BOARD_ENDPOINT)
+  .constant('GET_BOARD_BY_ID_ENDPOINT', GET_BOARD_BY_ID_ENDPOINT)
+  .constant('GET_BOARD_BY_NAME_ENDPOINT', GET_BOARD_BY_NAME_ENDPOINT)
   .constant('GET_BOARDS_ENDPOINT', GET_BOARDS_ENDPOINT)
+  .constant('CREATE_BOARD_ENDPOINT', CREATE_BOARD_ENDPOINT)
   .component(BoardComponent.NAME, BoardComponent)
   .controller(BoardComponentController.NAME, BoardComponentController)
   .component(BoardHeaderComponent.NAME, BoardHeaderComponent)
@@ -66,7 +74,7 @@ export default angular.module('zeplin.ui.board', [
   .controller(BoardListComponentController.NAME, BoardListComponentController)
   .component(BoardEditorComponent.NAME, BoardEditorComponent)
   .controller(BoardEditorComponentController.NAME, BoardEditorComponentController)
-  .directive(BoardNameCheckDirective.NAME, BoardNameCheckDirective)
+  .directive(BoardNameCheckDirective.NAME, BoardNameCheckDirective.factory)
   .component(NewColumnComponent.NAME, NewColumnComponent)
   .controller(NewColumnComponentController.NAME, NewColumnComponentController)
   .component(ColumnEditorComponent.NAME, ColumnEditorComponent)
