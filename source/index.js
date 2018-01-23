@@ -11,6 +11,7 @@ import TaskModule from './task/task.module';
 import RemainderModule from './remainder/remainder.module';
 import CommentModule from './comment/comment.module';
 import UserModule from './user/user.module';
+import AuthenticationModule from './authentication/authentication.module';
 
 import IndexConfig from './index.config';
 
@@ -24,6 +25,7 @@ export default angular.module('zeplin.ui', [
   RemainderModule,
   CommentModule,
   UserModule,
+  AuthenticationModule,
 ])
   .config(IndexConfig)
   .name;

@@ -18,8 +18,19 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary form-button" type="button" ng-click="$ctrl.createBoard()" ng-disabled="newBoardForm.$invalid || newBoardForm.$pending">Create</button>
-        <button class="btn btn-primary form-button cancel" type="button" ng-click="$ctrl.close()">Close</button>
+        <div class="col-md-6">
+          &nbsp;
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-primary btn-block form-button" type="button" ng-click="$ctrl.createBoard()" ng-disabled="newBoardForm.$invalid || newBoardForm.$pending">Create</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-primary btn-block form-button cancel" type="button" ng-click="$ctrl.cancel()">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </div>

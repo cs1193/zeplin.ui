@@ -5,12 +5,15 @@ MAINTAINER Chandresh Rajkumar Manonmani <chandresh.rm@gmail.com> <cs1193@gmail.c
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app
+COPY package*.json ./
 RUN npm install
 
-COPY . /usr/src/app
+ENV WEBPACK_DEV_HOST 0.0.0.0
+ENV WEBPACK_DEV_PORT 38141
 
-# RUN npm run test
+COPY . .
+
+# RUN npm test
 
 EXPOSE 38141
 
