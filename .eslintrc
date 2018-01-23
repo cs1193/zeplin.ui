@@ -19,5 +19,6 @@
     "no-shadow": "off",
     "no-unused-vars": "off",
     "no-param-reassign": "off",
+    "prefer-const": "off"
   }
 }
