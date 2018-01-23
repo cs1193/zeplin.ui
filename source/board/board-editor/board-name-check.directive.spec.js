@@ -16,8 +16,6 @@ describe('Directive: Board Name Check', () => {
     $rootScope = _$rootScope_;
     $compile = _$compile_;
     scope = $rootScope.$new();
-
-    spyOn(BoardService, 'getBoardByName').and.return(_$q_.when({'message': 'Success'}));
   }));
 
   function compileElement() {

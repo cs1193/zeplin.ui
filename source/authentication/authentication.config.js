@@ -4,7 +4,11 @@
 import LoginComponent from './login/login.component';
 import RegisterComponent from './register/register.component';
 
-export default function AuthenticationConfig($stateProvider) {
+// import AuthenticationHttpInterceptor from './authentication.httpinterceptor';
+
+export default function AuthenticationConfig($stateProvider, $httpProvider, $localStorageProvider) {
+  $localStorageProvider.setKeyPrefix('carzoned-auth-');
+
   const loginState: object = {
     state: 'login',
     stateDefinition: {
@@ -24,4 +28,6 @@ export default function AuthenticationConfig($stateProvider) {
   $stateProvider
     .state(loginState.state, loginState.stateDefinition)
     .state(registerState.state, registerState.stateDefinition);
+
+  // $httpProvider.interceptors.push(AuthenticationHttpInterceptor.NAME);
 }
