@@ -31,7 +31,16 @@ export default class BoardComponentController {
       });
   }
 
-  newColumnMethod() {
-    this.$log.log('newColumnMethod');
+  createColumn(columnData) {
+    this.BoardService.createColumbByBoardId(this.boardId, columnData)
+      .then((data) => {
+        if (data) {
+          this.$log.log('Column Created');
+        } else {
+          this.$log.log('Column');
+        }
+      }, (error) => {
+        this.$log.log(error);
+      });
   }
 }

@@ -13,10 +13,6 @@ export default class NewColumnComponentController {
     this.ngToast = ngToast;
   }
 
-  $onInit() {
-    this.board.newColumnMethod();
-  }
-
   open() {
     const $ctrl = this;
     const modalInstance = this.$uibModal.open({
@@ -36,7 +32,7 @@ export default class NewColumnComponentController {
     });
 
     modalInstance.result.then((instance) => {
-      this.ngToast.create(instance.message);
+      this.board.createColumn(instance);
     }, (error) => {
       this.$log.log('Modal Closed');
     });
