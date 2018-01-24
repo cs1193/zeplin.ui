@@ -6,5 +6,5 @@ import BoardComponentController from './board.component.controller';
 export default {
   NAME: 'board',
   template: BoardComponentTemplate,
-  controller: BoardComponentController,
+  controller: BoardComponentController.NAME,
 };

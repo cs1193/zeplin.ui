@@ -16,7 +16,7 @@ export default class BoardNameCheckDirective {
           BoardService.getBoardByName(modelValue)
             .then((data) => {
               controller.$setValidity('boardNameExists', true);
-              if (data && data.boardName === modelValue) {
+              if (data && (data.status === 'success' || (data.board && data.board.name === modelValue))) {
                 controller.$setValidity('boardNameExists', false);
               }
               deferred.resolve(true);

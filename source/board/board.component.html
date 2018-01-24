@@ -1,8 +1,9 @@
 <div class="board">
-  <board-header></board-header>
+  <board-header name="$ctrl.boardName"></board-header>
   <column-list>
     <column label="'Backlog'" ng-drop="true" ng-drop-success="$ctrl.onDropComplete($data, $event)">
       <card-item ng-drag="true" ng-drag-data="{obj}" ng-drag-success="$ctrl.onDragComplete($data, $event)" image="'http://via.placeholder.com/300x125'"></card-item>
     </column>
+    <new-column board-id="$ctrl.boardId" board-name="$ctrl.boardName"></new-column>
   </column-list>
 </div>

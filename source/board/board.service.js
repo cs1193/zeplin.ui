@@ -9,11 +9,13 @@ export default class BoardService {
     $q,
     $http,
     BOARD_ENDPOINT,
+    VALIDATION_ENDPOINT,
   ) {
     this.$log = $log;
     this.$q = $q;
     this.$http = $http;
     this.BOARD_ENDPOINT = BOARD_ENDPOINT;
+    this.VALIDATION_ENDPOINT = VALIDATION_ENDPOINT;
   }
 
   getBoards() {
@@ -47,12 +49,10 @@ export default class BoardService {
   getBoardByName(name): Promise {
     const deferred = this.$q.defer();
 
-    this.$http.post(`${this.BOARD_ENDPOINT}`, {
+    this.$http.post(`${this.VALIDATION_ENDPOINT}/name`, {
       name,
     }).then((response) => {
-      if (response && response.data && (response.status === 200 || response.status === 201)) {
-        deferred.resolve(response.data);
-      }
+      deferred.resolve(response);
     }, (error) => {
       deferred.reject(error);
     });

@@ -11,10 +11,27 @@ export default class BoardComponentController {
     this.$stateParams = $stateParams;
     this.BoardService = BoardService;
 
-    this.boardId = this.$stateParams.broadId;
+    this.boardId = this.$stateParams.boardId;
   }
 
   $onInit() {
-    this.$log.log(this.boardId);
+    this.loadingBoards = true;
+    this.BoardService.getBoardById(this.boardId)
+      .then((data) => {
+        if (data) {
+          this.boardName = data.name;
+          this.loadingBoards = false;
+          this.noBoards = false;
+        } else {
+          this.noBoards = true;
+          this.loadingBoards = false;
+        }
+      }, (error) => {
+        this.$log.log(error);
+      });
+  }
+
+  newColumnMethod() {
+    this.$log.log('newColumnMethod');
   }
 }

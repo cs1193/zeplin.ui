@@ -8,4 +8,8 @@ export default class ColumnEditorComponentController {
     this.$log = $log;
     this.$scope = $scope;
   }
+
+  cancel() {
+    this.modalInstance.dismiss('cancel');
+  }
 }

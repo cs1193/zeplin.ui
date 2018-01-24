@@ -3,6 +3,10 @@ import ColumnEditorComponentController from './column-editor.component.controlle
 
 export default {
   NAME: 'columnEditor',
+  bindings: {
+    modalInstance: '<',
+    resolve: '<',
+  },
   template: ColumnEditorComponentTemplate,
   controller: ColumnEditorComponentController.NAME,
 };
