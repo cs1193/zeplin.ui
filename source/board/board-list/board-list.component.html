@@ -1,7 +1,7 @@
 <div class="board-list">
   <ul class="list-unstyled">
     <li role="menuitem" ng-if="!$ctrl.noBoards" ng-repeat="board in $ctrl.boards track by $index">
-      <a ng-href="/board/{{board.id}}">{{board.title}}</a>
+      <a ng-href="/#!/board/{{board._id}}">{{board.name}}</a>
     </li>
     <div ng-if="$ctrl.noBoards">
       No Boards Available
