@@ -20,7 +20,7 @@ export default class AuthenticationHttpInterceptor {
   }
 
   request = (config: any) => {
-    config.params = config.params || {};
+    config.headers = config.headers || {};
     let accessToken = this.AuthenticationService.getAccessToken();
 
     if (accessToken) {

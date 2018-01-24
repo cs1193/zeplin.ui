@@ -3,7 +3,7 @@
 import AuthenticationService from './authentication.service';
 
 /* @ngInject */
-export default function AuthenticationRouteResolver ($q, AuthenticationService) {
+export default function AuthenticationRouteResolver($q, AuthenticationService) {
   let deferred = $q.defer();
 
   if (AuthenticationService.isAuthenticated()) {

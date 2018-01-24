@@ -8,6 +8,7 @@ import ngToast from 'ng-toast';
 
 import ngDraggable from 'ngdraggable';
 
+import AuthenticationModule from '../authentication/authentication.module';
 import CardModule from '../card/card.module';
 
 import BoardComponent from './board.component';
@@ -47,6 +48,7 @@ declare var GET_BOARD_BY_ID_ENDPOINT: string;
 declare var GET_BOARD_BY_NAME_ENDPOINT: string;
 declare var GET_BOARDS_ENDPOINT: string;
 declare var CREATE_BOARD_ENDPOINT: string;
+declare var BOARD_ENDPOINT: string;
 
 export default angular.module('zeplin.ui.board', [
   angularUIRouter,
@@ -55,11 +57,13 @@ export default angular.module('zeplin.ui.board', [
   'ngDraggable',
   'ngToast',
   CardModule,
+  AuthenticationModule,
 ])
   .constant('GET_BOARD_BY_ID_ENDPOINT', GET_BOARD_BY_ID_ENDPOINT)
   .constant('GET_BOARD_BY_NAME_ENDPOINT', GET_BOARD_BY_NAME_ENDPOINT)
   .constant('GET_BOARDS_ENDPOINT', GET_BOARDS_ENDPOINT)
   .constant('CREATE_BOARD_ENDPOINT', CREATE_BOARD_ENDPOINT)
+  .constant('BOARD_ENDPOINT', BOARD_ENDPOINT)
   .component(BoardComponent.NAME, BoardComponent)
   .controller(BoardComponentController.NAME, BoardComponentController)
   .component(BoardHeaderComponent.NAME, BoardHeaderComponent)
