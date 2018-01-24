@@ -9,6 +9,10 @@ export default class ColumnEditorComponentController {
     this.$scope = $scope;
   }
 
+  createColumn() {
+    this.modalInstance.close(this.newColumnForm);
+  }
+
   cancel() {
     this.modalInstance.dismiss('cancel');
   }
