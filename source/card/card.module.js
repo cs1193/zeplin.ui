@@ -19,11 +19,13 @@ import NewCardComponentController from './new-card/new-card.component.controller
 import CardService from './card.service';
 
 declare var CARD_ENDPOINT: string;
+declare var CARDS_COLUMN_ENDPOINT: string;
 
 export default angular.module('zeplin.ui.card', [
   angularUIBootstrap,
 ])
   .constant('CARD_ENDPOINT', CARD_ENDPOINT)
+  .constant('CARDS_COLUMN_ENDPOINT', CARDS_COLUMN_ENDPOINT)
   .component(CardListComponent.NAME, CardListComponent)
   .component(CardItemComponent.NAME, CardItemComponent)
   .component(CardTextComponent.NAME, CardTextComponent)

@@ -47,6 +47,7 @@ import BoardConfig from './board.config';
 declare var BOARD_ENDPOINT: string;
 declare var COLUMN_ENDPOINT: string;
 declare var VALIDATION_ENDPOINT: string;
+declare var COLUMNS_BOARD_ENDPOINT: string;
 
 export default angular.module('zeplin.ui.board', [
   angularUIRouter,
@@ -60,6 +61,7 @@ export default angular.module('zeplin.ui.board', [
   .constant('BOARD_ENDPOINT', BOARD_ENDPOINT)
   .constant('COLUMN_ENDPOINT', COLUMN_ENDPOINT)
   .constant('VALIDATION_ENDPOINT', VALIDATION_ENDPOINT)
+  .constant('COLUMNS_BOARD_ENDPOINT', COLUMNS_BOARD_ENDPOINT)
   .component(BoardComponent.NAME, BoardComponent)
   .controller(BoardComponentController.NAME, BoardComponentController)
   .component(BoardHeaderComponent.NAME, BoardHeaderComponent)

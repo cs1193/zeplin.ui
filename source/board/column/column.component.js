@@ -1,15 +1,17 @@
 import ColumnComponentTemplate from './column.component.html';
+import ColumnComponentController from './column.component.controller';
+
+import BoardComponent from '../board.component';
 
 export default {
   NAME: 'column',
   bindings: {
-    label: '<',
+    columnId: '<',
+    name: '<',
     cardCount: '<',
     color: '=',
-  },
-  require: {
-    columnList: '^^',
+    columns: '=',
   },
   template: ColumnComponentTemplate,
-  transclude: true,
+  controller: ColumnComponentController.NAME,
 };
