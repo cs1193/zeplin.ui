@@ -8,24 +8,18 @@ export default class BoardService {
     $log,
     $q,
     $http,
-    GET_BOARDS_ENDPOINT,
-    GET_BOARD_BY_ID_ENDPOINT,
-    GET_BOARD_BY_NAME_ENDPOINT,
-    CREATE_BOARD_ENDPOINT,
+    BOARD_ENDPOINT,
   ) {
     this.$log = $log;
     this.$q = $q;
     this.$http = $http;
-    this.GET_BOARDS_ENDPOINT = GET_BOARDS_ENDPOINT;
-    this.GET_BOARD_BY_ID_ENDPOINT = GET_BOARD_BY_ID_ENDPOINT;
-    this.GET_BOARD_BY_NAME_ENDPOINT = GET_BOARD_BY_NAME_ENDPOINT;
-    this.CREATE_BOARD_ENDPOINT = CREATE_BOARD_ENDPOINT;
+    this.BOARD_ENDPOINT = BOARD_ENDPOINT;
   }
 
   getBoards() {
     const deferred = this.$q.defer();
 
-    this.$http.get(`${this.GET_BOARDS_ENDPOINT}`).then((response) => {
+    this.$http.get(`${this.BOARD_ENDPOINT}`).then((response) => {
       if (response && response.data && (response.status === 200 || response.status === 201)) {
         deferred.resolve(response.data);
       }
@@ -39,7 +33,7 @@ export default class BoardService {
   getBoardById(id) {
     const deferred = this.$q.defer();
 
-    this.$http.get(`${this.GET_BOARD_BY_ID_ENDPOINT}/${id}`).then((response) => {
+    this.$http.get(`${this.BOARD_ENDPOINT}/${id}`).then((response) => {
       if (response && response.data && (response.status === 200 || response.status === 201)) {
         deferred.resolve(response.data);
       }
@@ -53,7 +47,7 @@ export default class BoardService {
   getBoardByName(name): Promise {
     const deferred = this.$q.defer();
 
-    this.$http.post(`${this.GET_BOARD_BY_NAME_ENDPOINT}`, {
+    this.$http.post(`${this.BOARD_ENDPOINT}`, {
       name,
     }).then((response) => {
       if (response && response.data && (response.status === 200 || response.status === 201)) {
@@ -69,7 +63,7 @@ export default class BoardService {
   createBoard(board): Promise {
     const deferred = this.$q.defer();
 
-    this.$http.post(`${this.CREATE_BOARD_ENDPOINT}`, board).then((response) => {
+    this.$http.post(`${this.BOARD_ENDPOINT}`, board).then((response) => {
       if (response && response.data && (response.status === 200 || response.status === 201)) {
         deferred.resolve(response.data);
       }

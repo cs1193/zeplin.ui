@@ -36,6 +36,7 @@ export default angular.module('zeplin.ui.authentication', [
   .controller(LoginComponentController.NAME, LoginComponentController)
   .component(RegisterComponent.NAME, RegisterComponent)
   .controller(RegisterComponentController.NAME, RegisterComponentController)
+  .factory(AuthenticationHttpInterceptor.NAME, AuthenticationHttpInterceptor.factory)
   .service(AuthenticationService.NAME, AuthenticationService)
   .service(EndpointService.NAME, EndpointService)
   .config(AuthenticationConfig)
