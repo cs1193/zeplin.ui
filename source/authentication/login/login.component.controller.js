@@ -30,6 +30,8 @@ export default class LoginComponentController {
     ).then((response) => {
       if (response && response.status === 'success') {
         this.AuthenticationService.setAccessToken(response.token);
+        this.AuthenticationService.setAccessTokenExpiration(response.tokenExpiration);
+
         this.$location.url('/');
       } else {
         this.errorMessage = response.message;

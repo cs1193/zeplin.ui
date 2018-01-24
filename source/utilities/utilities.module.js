@@ -15,5 +15,5 @@ export default angular.module('zeplin.ui.utilities', [
   .constant('COLOR_PICKER', COLOR_PICKER)
   .component(ColorPickerComponent.NAME, ColorPickerComponent)
   .controller(ColorPickerComponentController.NAME, ColorPickerComponentController)
-  .directive(EmailAddressDirective.NAME, EmailAddressDirective)
+  .directive(EmailAddressDirective.NAME, EmailAddressDirective.factory)
   .name;
