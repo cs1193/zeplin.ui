@@ -7,27 +7,32 @@
   <div class="modal-body">
     <form class="form new-card-form" name="newCardForm" accept-charset="utf-8" novalidate autocomplete="off">
       <div class="form-group">
-        <label for="name">Title</label>
-        <input type="text" id="name" name="name" class="form-control" placeholder="Title" ng-model="vm.newCardForm.name" required min="3" max="140" />
-        <div class="help-block" ng-messages="newCardForm.name.$error" ng-show="newCardForm.name.$touched">
+        <label for="column">Column</label>
+        <select class="form-control"  ng-model="$ctrl.newCardForm.columnId" ng-init="$ctrl.newCardForm.columnId = $ctrl.newCardForm.columnId || $ctrl.resolve.columnId">
+          <option ng-repeat="column in $ctrl.columns track by $index" ng-selected="column._id === $ctrl.newCardForm.columnId" ng-value="column._id">
+            {{column.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="text">Title</label>
+        <input type="text" id="text" name="text" class="form-control" placeholder="Title" ng-model="$ctrl.newCardForm.text" required min="3" max="140" />
+        <div class="help-block" ng-messages="newCardForm.text.$error" ng-show="newCardForm.text.$touched">
           <span ng-message="required">Title is required.</span>
         </div>
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea id="description" name="description" class="form-control textarea" placeholder="Description" ng-model="vm.newCardForm.description" required></textarea>
+        <textarea id="description" name="description" class="form-control textarea" placeholder="Description" ng-model="$ctrl.newCardForm.description" required></textarea>
         <div class="help-block" ng-messages="newCardForm.description.$error" ng-show="newCardForm.description.$touched">
           <span ng-message="required">Description is required.</span>
         </div>
       </div>
       <div class="form-group">
-        <label for="description">Image</label>
-      </div>
-      <div class="form-group">
         <label for="color">Color</label>
-        <input type="file" class="form-control" />
+        <color-picker selected-color="$ctrl.newCardForm.color" ng-model="$ctrl.newCardForm.color"></color-picker>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="description">Sub Tasks</label>
         <task task-id="123"></task>
       </div>
@@ -42,11 +47,25 @@
       <div class="form-group">
         <label for="description">Remainder</label>
         <shared-profile></shared-profile>
+      </div> -->
+      <div class="form-group">
+        <div class="col-md-6">
+          &nbsp;
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-primary btn-block form-button" type="button" ng-click="$ctrl.createCard()" ng-disabled="newCardForm.$invalid || newCardForm.$pending">Create</button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-primary btn-block form-button cancel" type="button" ng-click="$ctrl.cancel()">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+
   </div>
 </div>

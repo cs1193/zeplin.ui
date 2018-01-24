@@ -1,0 +1,43 @@
+
+.modal-content {
+  border-radius: 3px;
+  box-shadow: none;
+  border: 0px;
+
+  .modal-header,
+  .modal-footer {
+    border: 0px;
+  }
+
+  .modal-header {
+    background: #ecf0f1;
+
+    .modal-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+
+  .modal-body {
+    .form-control {
+      box-shadow: none;
+      border-radius: 0px;
+      -webkit-appearance: none;
+    }
+
+    .textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    .form-button {
+      @include linear-gradient(#1991EB, #2DA1F8, 1.0);
+      color: #FFFFFF;
+      border: solid 1px #1585d8;
+
+      &.cancel {
+        @include linear-gradient(#CB356B, #BD3F32, 1.0);
+      }
+    }
+  }
+}

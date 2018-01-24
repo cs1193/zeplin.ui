@@ -11,6 +11,7 @@ export default class BoardService {
     BOARD_ENDPOINT,
     VALIDATION_ENDPOINT,
     COLUMN_ENDPOINT,
+    COLUMNS_BOARD_ENDPOINT,
   ) {
     this.$log = $log;
     this.$q = $q;
@@ -18,6 +19,7 @@ export default class BoardService {
     this.BOARD_ENDPOINT = BOARD_ENDPOINT;
     this.VALIDATION_ENDPOINT = VALIDATION_ENDPOINT;
     this.COLUMN_ENDPOINT = COLUMN_ENDPOINT;
+    this.COLUMNS_BOARD_ENDPOINT = COLUMNS_BOARD_ENDPOINT;
   }
 
   getBoards() {
@@ -83,6 +85,20 @@ export default class BoardService {
       boardId,
       columnData,
     }).then((response) => {
+      if (response && response.data && (response.status === 200 || response.status === 201)) {
+        deferred.resolve(response.data);
+      }
+    }, (error) => {
+      deferred.reject(error);
+    });
+
+    return deferred.promise;
+  }
+
+  getColumnsByBoardId(boardId): Promise {
+    const deferred = this.$q.defer();
+
+    this.$http.get(`${this.COLUMNS_BOARD_ENDPOINT}${boardId}`).then((response) => {
       if (response && response.data && (response.status === 200 || response.status === 201)) {
         deferred.resolve(response.data);
       }

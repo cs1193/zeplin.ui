@@ -12,10 +12,20 @@ export default class CardEditorComponentController {
   }
 
   $onInit() {
-    if (this.resolve.columnId) {
-      this.$log.log('Defined');
-    }
-    this.$log.log('Undefined');
+    this.columns = this.resolve.columns;
+  }
+
+  createCard() {
+    this.CardService.createCard(this.newCardForm)
+      .then((response) => {
+        this.modalInstance.close({
+          status: 'success',
+          message: 'Success! New Card Created.',
+          card: response,
+        });
+      }, (error) => {
+        this.$log.log('Error! Creating new Card');
+      });
   }
 
   cancel() {

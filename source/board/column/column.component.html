@@ -1,11 +1,11 @@
 <div class="col-md-3">
   <div class="column">
-    <column-header label="$ctrl.label" card-count="$ctrl.cardCount"></column-header>
+    <column-header label="$ctrl.name" card-count="$ctrl.cardCount"></column-header>
     <card-list>
-      <ng-transclude></ng-transclude>
+      <card-item ng-if="$ctrl.cards.length > 0" ng-repeat="card in $ctrl.cards track by $index"></card-item>
     </card-list>
     <div class="column-add-card">
-      <new-card rounded="true" column-id="123"></new-card>
+      <new-card rounded="true" column-id="$ctrl.columnId" columns="$ctrl.columns"></new-card>
     </div>
   </div>
 </div>

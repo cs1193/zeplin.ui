@@ -25,10 +25,14 @@ export default class NewCardComponentController {
         columnId() {
           return $ctrl.columnId;
         },
+        columns() {
+          return $ctrl.columns;
+        },
       },
     });
 
     modalInstance.result.then((instance) => {
+      this.board.updateColumn(instance);
       this.$log.log('Modal Opened');
     }, (error) => {
       this.$log.log('Modal Closed');
