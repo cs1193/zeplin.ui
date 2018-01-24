@@ -13,8 +13,9 @@ export default class AuthenticationService {
 
   isAuthenticated(): boolean {
     let accessToken = this.getAccessToken();
+    let expiration = this.getAccessTokenExpiration();
 
-    if (accessToken) {
+    if (accessToken && expiration && expiration.toISOString() > new Date().toISOString()) {
       return true;
     }
 
@@ -31,12 +32,26 @@ export default class AuthenticationService {
     return accessToken;
   }
 
+  getAccessTokenExpiration(): Date {
+    let { accessTokenExpiration }: string = this.$localStorage;
+
+    if (accessTokenExpiration) {
+      return new Date(accessTokenExpiration);
+    }
+    return undefined;
+  }
+
   setAccessToken(accessToken: string): void {
     this.$localStorage.accessToken = JSON.stringify(accessToken);
   }
 
+  setAccessTokenExpiration(tokenExpiration: Date): void {
+    this.$localStorage.accessTokenExpiration = new Date(tokenExpiration).toISOString();
+  }
+
   removeAccessToken(): boolean {
     delete this.$localStorage.accessToken;
+    delete this.$localStorage.accessTokenExpiration;
     return true;
   }
 
