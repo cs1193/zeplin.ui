@@ -26,7 +26,7 @@ export default class ColumnComponentController {
     }
 
     this.$scope.$on(`card-${this.columnId}`, (event, data) => {
-      this.cards.push(data);
+      this.cards.push(data.card);
       this.$scope.$apply();
     });
   }

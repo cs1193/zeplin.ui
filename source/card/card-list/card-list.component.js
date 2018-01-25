@@ -1,4 +1,5 @@
 import CardListComponentTemplate from './card-list.component.html';
+import CardListComponentController from './card-list.component.controller';
 
 export default {
   NAME: 'cardList',
@@ -6,5 +7,6 @@ export default {
     color: '<',
   },
   template: CardListComponentTemplate,
+  controller: CardListComponentController.NAME,
   transclude: true,
 };

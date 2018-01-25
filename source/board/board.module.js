@@ -6,8 +6,6 @@ import angularUIBootstrap from 'angular-ui-bootstrap';
 import ngSanitize from 'angular-sanitize';
 import ngToast from 'ng-toast';
 
-import ngDraggable from 'ngdraggable';
-
 import AuthenticationModule from '../authentication/authentication.module';
 import CardModule from '../card/card.module';
 
@@ -53,7 +51,6 @@ export default angular.module('zeplin.ui.board', [
   angularUIRouter,
   angularUIBootstrap,
   ngSanitize,
-  'ngDraggable',
   'ngToast',
   CardModule,
   AuthenticationModule,

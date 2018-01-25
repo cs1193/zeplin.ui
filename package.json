@@ -73,7 +73,6 @@
     "angular": "1.6.8",
     "angular-animate": "1.6.8",
     "angular-messages": "1.6.8",
-    "angular-native-dragdrop": "1.2.2",
     "angular-resource": "1.6.8",
     "angular-route": "1.6.8",
     "angular-sanitize": "1.6.8",
@@ -86,7 +85,6 @@
     "font-awesome": "4.7.0",
     "lodash": "4.17.4",
     "ng-toast": "2.0.0",
-    "ngdraggable": "0.1.10",
     "ngstorage": "0.3.11"
   },
   "directories": {
