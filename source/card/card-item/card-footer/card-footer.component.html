@@ -1,18 +1,18 @@
 <div class="card-footer">
-  <div class="row">
-    <div class="col-md-4">
-      <task-indicator task-id="123" completed="2" total="3"></task-indicator>
-    </div>
-    <div class="col-md-4">
-      <remainder-indicator remainder-time="'15:00'"></remainder-indicator>
-    </div>
-    <div class="col-md-4">
-      <comment-indicator comment-count="20"></comment-indicator>
+  <div class="row" ng-if="$ctrl.remainder">
+    <div class="col-md-12">
+      <remainder-indicator remainder-time="$ctrl.remainder"></remainder-indicator>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <shared-profile-indicator></shared-profile-indicator>
+  <div class="row"  ng-if="!$ctrl.remainder">
+    <div class="col-md-4" ng-if="$ctrl.taskCompleted || $ctrl.taskTotal">
+      <task-indicator card-id="123" completed="$ctrl.taskCompleted" total="$ctrl.taskTotal"></task-indicator>
+    </div>
+    <div class="col-md-4" ng-if="$ctrl.comment">
+      <comment-indicator comment-count="20"></comment-indicator>
+    </div>
+    <div class="col-md-4"  ng-if="$ctrl.sharedProfile">
+      <shared-profile-indicator profile="$ctrl.sharedProfile"></shared-profile-indicator>
     </div>
   </div>
 </div>

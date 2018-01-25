@@ -56,11 +56,11 @@ describe("Authentication: HttpInterceptor", () => {
   it('should append authorization header query params for request', () => {
     let config = {
       method: 'POST',
-      url: 'http://videoservice.login/videos',
+      url: 'http://get-boards-data',
       headers: {}
     };
     authenticationHttpInterceptor.request(config);
-    expect(config.headers['Authorization']).toEqual(`Bearer ${fakeAccessToken}`);
+    expect(config.headers['x-access-token']).toEqual(`${fakeAccessToken}`);
   });
 
   it('should not redirect to login for unauthorized', () => {

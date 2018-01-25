@@ -5,8 +5,10 @@ export default {
   bindings: {
     text: '<',
     image: '<',
-    comments: '<',
-    subtasks: '<',
+    comment: '<',
+    taskCompleted: '<',
+    taskTotal: '<',
+    remainder: '<',
     color: '<',
     shared: '=',
   },
