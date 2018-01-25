@@ -1,7 +1,7 @@
-<div class="card" draggable>
-  <card-image source="$ctrl.image"></card-image>
+<div class="card" ng-style="{'border-left': ($ctrl.image || $ctrl.remainder) ? '' : $ctrl.color ? ('5px solid' + $ctrl.color) : ''}" draggable>
+  <card-image ng-if="$ctrl.image" source="$ctrl.image"></card-image>
   <card-text>
     {{$ctrl.text}}
   </card-text>
-  <card-footer></card-footer>
+  <card-footer remainder="$ctrl.remainder" task-completed="$ctrl.taskCompleted" task-total="$ctrl.taskTotal" comment="$ctrl.comment" shared-profile="$ctrl.shared"></card-footer>
 </div>

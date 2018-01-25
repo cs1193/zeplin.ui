@@ -7,6 +7,8 @@ import EmailAddressDirective from './emailaddress.directive';
 import ColorPickerComponent from './color-picker/color-picker.component';
 import ColorPickerComponentController from './color-picker/color-picker.component.controller';
 
+import RemainderTimeFilter from './remaindertime.filter';
+
 declare var COLOR_PICKER: array;
 
 export default angular.module('zeplin.ui.utilities', [
@@ -16,4 +18,5 @@ export default angular.module('zeplin.ui.utilities', [
   .component(ColorPickerComponent.NAME, ColorPickerComponent)
   .controller(ColorPickerComponentController.NAME, ColorPickerComponentController)
   .directive(EmailAddressDirective.NAME, EmailAddressDirective.factory)
+  .filter(RemainderTimeFilter.NAME, RemainderTimeFilter.factory)
   .name;
